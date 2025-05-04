@@ -1,0 +1,59 @@
+@startuml
+package "Интернет сайт" as internet {
+	object "Пользователь" as users
+	users : login
+	users : password
+	users : registration_date
+	
+	object "Игры" as games
+	games : name
+	games : description
+	games : picture
+}
+
+package "Локальная установка" as local {
+	object "Игровая сессия" as sessions
+	sessions : id
+	sessions : last_date
+	
+	object "Прогресс по задачам" as task_progress
+	task_progress : session_id
+	task_progress : task_id
+
+	object "Прогресс по пасхалкам" as egg_progress
+	egg_progress : session_id
+	egg_progress : egg_id
+	
+	object "Уровень" as levels
+	levels : id
+	levels : name
+	levels : description
+	
+	object "Задача" as tasks
+	tasks : id
+	tasks : level_id
+	tasks : name
+	tasks : description
+	tasks : answer
+	
+	object "Настройки" as settings
+	settings : music_file
+	settings : texture_file
+	settings : debug_mode
+	
+	object "Пасхалка" as eggs
+	eggs : id
+	eggs : level_id
+	eggs : name
+	eggs : description
+	
+	sessions "1" -- "0..N" task_progress
+	sessions "1" -- "0..N" egg_progress
+	
+	eggs "1" -- "0..N" egg_progress
+	tasks "1" -- "0..N" task_progress
+	
+	eggs "0..1" -- "1" levels 
+	tasks "1..N" -- "1" levels
+}
+@enduml
