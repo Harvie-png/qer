@@ -54,7 +54,7 @@
 
 **[ ИНСТРУМЕНТЫ РАЗРАБОТКИ, ИНФОРМАЦИЯ О БД ]**
 
-* Компилятор С#, Microsoft Visyal Studio, Unity Hub - для разработки самого приложения
+* Компилятор С#, Microsoft Visual Studio, Unity Hub - для разработки самого приложения
 * HTML, CSS, Microsoft Visual Studio Code – для разработки вспомогательных веб-ресурсов
 * SQLite - в качестве СУБД
 
